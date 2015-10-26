@@ -32,7 +32,6 @@ public class MyModelClientHandler extends Observable implements Runnable {
 	@Override
 	public void run() {
 		try {
-			System.out.println("Got object- send for solving");
 			setChanged();
 			Maze3d mymaze=(Maze3d)in.readObject();
 			notifyObservers(mymaze);
@@ -65,7 +64,6 @@ public class MyModelClientHandler extends Observable implements Runnable {
 	private InputStream readInputClient() throws IOException {
 		DataInputStream dis = new DataInputStream(someClient.getInputStream());
 		int len = dis.readInt();
-		System.out.println("Image Size: " + len/1024 + "KB");
 		byte[] data = new byte[len];
 		dis.readFully(data);
 		InputStream ian = new ByteArrayInputStream(data);
