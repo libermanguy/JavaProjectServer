@@ -5,7 +5,7 @@ import presenter.Presenter;
 import java.io.IOException;
 
 import model.MyModel;
-import view.MazeWindow;
+import view.MyTCPIPServer;
 import view.MyView;
 import view.View;
 
@@ -23,33 +23,16 @@ import view.View;
 public class Demo {
 	public static void main(String[] args) {
 		
-		
+		MyTCPIPServer server = new MyTCPIPServer(12345);
+		MyView myview=new MyView();
 		MyModel mymodel=new MyModel();
-		Presenter presenter=null;
-		int option = 2;
+		Presenter presenter= new Presenter(mymodel, myview,server);
+		myview.addObserver(presenter);
+		mymodel.addObserver(presenter);
 		
-		if (option == 1)
-		{
-			MyView myview=new MyView();
-			presenter=new Presenter(mymodel, myview);
-			myview.startCLI();
-		}
-		if (option == 2)
-		{
-			MazeWindow myview=new MazeWindow("Window", 1000, 500);
-			presenter=new Presenter(mymodel, myview);
-			myview.addObserver(presenter);
-			mymodel.addObserver(presenter);
-			myview.run();
-		}
-		
-		
-		
-		
-		
-		
-		
-		
+		server.setPresenter(presenter);
+		server.startServer(3);
+		//myview.startCLI();
 		
 	}
 

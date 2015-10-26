@@ -12,6 +12,8 @@ import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
+
+
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
@@ -27,7 +29,7 @@ public class Properties implements Serializable
 	public Properties() {
 		threadcount =0;
 		display=0;
-		workspace="omri ya homo";
+		workspace="default";
 	}
 	
 	public void loadProp(String file) throws Exception
@@ -40,6 +42,9 @@ public class Properties implements Serializable
 		NodeList nlist = doc.getElementsByTagName("properties");
 		Node n = nlist.item(0);
 		Element e = (Element)n;
+		threadcount = Integer.parseInt(e.getElementsByTagName("threadcount").item(0).getTextContent());
+		workspace =  e.getElementsByTagName("workspace").item(0).getTextContent();
+		display = Integer.parseInt(e.getElementsByTagName("display").item(0).getTextContent());
 	}
 	
 	public void saveProp(String file) throws Exception
@@ -70,4 +75,18 @@ public class Properties implements Serializable
 		DOMSource dm = new DOMSource(doc);
 		transformer.transform(dm, new StreamResult(outputfile));
 		}
+
+	public int getThreadcount() {
+		return threadcount;
+	}
+
+	public String getWorkspace() {
+		return workspace;
+	}
+
+	public int getDisplay() {
+		return display;
+	}
+	
+	
 }
