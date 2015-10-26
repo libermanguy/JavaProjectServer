@@ -35,7 +35,9 @@ public class MyTCPIPServer {
 				String line = (String) input.readObject();
 				if(line.equals(SOLVE)){
 					System.out.println("Start solving");
-					executer.execute(new Thread(new MyModelClientHandler(someClient)));
+					MyModelClientHandler ch=new MyModelClientHandler(someClient,output,input);
+					ch.addObserver(presenter);
+					executer.execute(ch);
 					
 				}
 			}

@@ -3,10 +3,12 @@ package view;
 import java.io.BufferedOutputStream;
 import java.io.ByteArrayInputStream;
 import java.io.DataInputStream;
+import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.io.OutputStream;
 import java.net.Socket;
 import java.util.Observable;
 import java.util.Observer;
@@ -16,10 +18,14 @@ import algorithms.mazeGenerators.Maze3d;
 public class MyModelClientHandler extends Observable implements Runnable {
 	
 	private Socket someClient;
-	
-	public MyModelClientHandler(Socket someClient) {
+	private ObjectOutputStream out;
+	private ObjectInputStream in;
+	public int guy=5;
+	public MyModelClientHandler(Socket someClient, ObjectOutputStream out ,ObjectInputStream in ) {
 
 		this.someClient = someClient;
+		this.out=out;
+		this.in=in;
 
 	}
 
@@ -28,8 +34,8 @@ public class MyModelClientHandler extends Observable implements Runnable {
 		try {
 			System.out.println("Got object- send for solving");
 			setChanged();
-			notifyObservers(new ObjectInputStream(someClient.getInputStream()).readObject());
-			someClient.getInputStream().close();
+			Maze3d mymaze=(Maze3d)in.readObject();
+			notifyObservers(mymaze);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}					
@@ -42,10 +48,12 @@ public class MyModelClientHandler extends Observable implements Runnable {
 	 * @throws IOException
 	 */
 	public void sendClientSolution(Object o) throws IOException {
-		ObjectOutputStream oos=new ObjectOutputStream(someClient.getOutputStream());
-		oos.writeObject(o);
-		oos.flush();
-		oos.close();
+		out.writeObject(o);
+		out.flush();
+		out.close();
+		in.close();
+		someClient.close();
+		
 
 	}
 
@@ -64,6 +72,10 @@ public class MyModelClientHandler extends Observable implements Runnable {
 		return ian;
 	}
 
-
+	@Override
+	public int hashCode(){
+		return someClient.toString().hashCode();
+	}
+	
 
 }

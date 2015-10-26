@@ -59,6 +59,7 @@ public class MyModel extends Observable implements Model {
 		openfiles=0;
 		openthreads=0;
 		workspace = "c:\\temp\\";
+		_solutionscache=new HashMap<Maze3d,Solution<Position>>();
 	}
 
 	
