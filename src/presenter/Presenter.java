@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.Observable;
 import java.util.Observer;
 
+import algorithms.mazeGenerators.Maze3d;
 import general.Position;
 import model.Model;
 import view.MyModelClientHandler;
@@ -30,7 +31,7 @@ public class Presenter implements Observer {
 		this.model = model;
 		this.view = view;
 		this.server=server;
-		
+		map=new HashMap<Integer,MyModelClientHandler>();
 	}
 
 	@Override
@@ -40,13 +41,16 @@ public class Presenter implements Observer {
 		if (o.getClass()==MyModelClientHandler.class){
 			MyModelClientHandler my=(MyModelClientHandler)o;
 			map.put(my.hashCode(),my);
+			System.out.println("Guy is gai");
 			model.solve(arg,"air",my.hashCode());
 		}
 		
 		if (o==model){
 			Object [] args=(Object[])arg;
+			System.out.println("Outside the if");
 			if (map.get((Integer)args[0])!=null){
 				try {
+					System.out.println("Inside the if");
 					map.get((Integer)args[0]).sendClientSolution(args[1]);
 				} catch (IOException e) {
 					// TODO Auto-generated catch block

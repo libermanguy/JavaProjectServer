@@ -29,7 +29,6 @@ public class Demo {
 		Presenter presenter= new Presenter(mymodel, myview,server);
 		myview.addObserver(presenter);
 		mymodel.addObserver(presenter);
-		
 		server.setPresenter(presenter);
 		server.startServer(3);
 		//myview.startCLI();
