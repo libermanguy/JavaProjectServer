@@ -27,14 +27,13 @@ public class MyTCPIPServer {
 		try {
 			server=new ServerSocket(this.port);
 			while(killServer){
-				System.out.print("Waiting for client");
+				System.out.println("Waiting for client");
 				Socket someClient = server.accept();
 				System.out.println("New client connected..");
 				ObjectInputStream input=new ObjectInputStream(someClient.getInputStream());
 				ObjectOutputStream output=new ObjectOutputStream(someClient.getOutputStream());
 				String line = (String) input.readObject();
 				if(line.equals(SOLVE)){
-					System.out.println("Start solving");
 					MyModelClientHandler ch=new MyModelClientHandler(someClient,output,input);
 					ch.addObserver(presenter);
 					executer.execute(ch);
