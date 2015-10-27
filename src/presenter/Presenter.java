@@ -40,7 +40,22 @@ public class Presenter implements Observer {
 	@Override
 	public void update(Observable o, Object arg) {
 		
-		
+		if (o==view){
+			String strArr[] = (String[])arg;
+			switch(strArr[0])
+			{
+				case "start": 
+					server.startServer();
+				break;
+				
+				case "stop": 
+					server.stopServer();
+				break;
+				case "load":
+					//to complete
+				break;
+			}
+		}
 		if (o.getClass()==MyModelClientHandler.class){
 			MyModelClientHandler my=(MyModelClientHandler)o;
 			map.put(my.hashCode(),my);

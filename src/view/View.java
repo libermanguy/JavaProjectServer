@@ -19,7 +19,7 @@ public interface View {
 	 */
 	public void display(Object[] arg);
 	
-	public void setCLI(HashMap<String, Integer> commands);
+	public void setCLI();
 
 	
 }
