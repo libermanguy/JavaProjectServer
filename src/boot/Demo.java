@@ -29,17 +29,27 @@ public class Demo {
 		Presenter presenter= new Presenter(mymodel, myview,server);
 		myview.addObserver(presenter);
 		mymodel.addObserver(presenter);
-		
 		server.setPresenter(presenter);
+
+		myview.startCLI();
 		try {
-			presenter.setProperties("C:\\temp\\prop_server.xml");
+			presenter.setProperties("C:\\temp\\prop.xml");
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		server.startServer();
+		myview.startCLI();
+		try {
+			presenter.setProperties("C:\\temp\\prop.xml");
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		server.startServer();
 		//myview.startCLI();
-		
+		//myview.startCLI();
+
 	}
 
 }
