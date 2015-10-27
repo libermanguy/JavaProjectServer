@@ -27,7 +27,9 @@ public class MyTCPIPServer {
 		executer = Executors.newFixedThreadPool(numOfClients);
 		try {
 			server=new ServerSocket(this.port);
-			System.out.println("Open Server With port" + port);
+			System.out.println("Open Server accept connections on port " + port);
+			System.out.println("Max Client " + numOfClients);
+			System.out.println("-----------------------------------------------"+System.getProperty("line.separator"));
 			while(killServer){
 				System.out.println("Waiting for client");
 				Socket someClient = server.accept();
