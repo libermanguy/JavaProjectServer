@@ -4,9 +4,11 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Observable;
 import java.util.Observer;
+import java.util.concurrent.Executors;
 
 import algorithms.mazeGenerators.Maze3d;
 import general.Position;
+import general.Properties;
 import model.Model;
 import view.MyModelClientHandler;
 import view.MyTCPIPServer;
@@ -24,6 +26,7 @@ public class Presenter implements Observer {
 	
 	HashMap<Integer,MyModelClientHandler> map;
 	
+	Properties prop;
 	
 
 	public Presenter(Model model, View view, MyTCPIPServer server) {
@@ -61,4 +64,11 @@ public class Presenter implements Observer {
 	
 	}
 
+	public void setProperties(String file) throws Exception{
+		this.prop = new Properties();
+		prop.loadProp(file);
+		model.setProperties(prop.getThreadcount(), prop.getWorkspace());
+		server.setNumOfClients(prop.getConcurrentusers());
+		server.setPort(prop.getPort());
+	}
 }

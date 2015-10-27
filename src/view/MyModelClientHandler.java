@@ -21,7 +21,6 @@ public class MyModelClientHandler extends Observable implements Runnable {
 	private Socket someClient;
 	private ObjectOutputStream out;
 	private ObjectInputStream in;
-	public int guy=5;
 	public MyModelClientHandler(Socket someClient, ObjectOutputStream out ,ObjectInputStream in ) {
 
 		this.someClient = someClient;

@@ -23,12 +23,14 @@ import org.xml.sax.SAXException;
 public class Properties implements Serializable 
 {
 	int threadcount;
+	int port;
+	int concurrentusers; 
 	String workspace;
-	int display;
 	
 	public Properties() {
-		threadcount =0;
-		display=0;
+		threadcount = 5;
+		port=2000;
+		concurrentusers = 5;
 		workspace="default";
 	}
 	
@@ -43,8 +45,9 @@ public class Properties implements Serializable
 		Node n = nlist.item(0);
 		Element e = (Element)n;
 		threadcount = Integer.parseInt(e.getElementsByTagName("threadcount").item(0).getTextContent());
+		port = Integer.parseInt(e.getElementsByTagName("port").item(0).getTextContent());
+		concurrentusers = Integer.parseInt(e.getElementsByTagName("concurrentusers").item(0).getTextContent());
 		workspace =  e.getElementsByTagName("workspace").item(0).getTextContent();
-		display = Integer.parseInt(e.getElementsByTagName("display").item(0).getTextContent());
 	}
 	
 	public void saveProp(String file) throws Exception
@@ -59,16 +62,18 @@ public class Properties implements Serializable
 		Element e2 = doc.createElement("threadcount");
 		e2.setTextContent(threadcount+"");
 		e.appendChild(e2);
-		
-		
-		Element e3 = doc.createElement("workspace");
-		e3.setTextContent(workspace);
-		e.appendChild(e3);
-		
-		Element e4 = doc.createElement("display");
-		e4.setTextContent(display+"");
+
+		Element e4 = doc.createElement("port");
+		e4.setTextContent(port+"");
 		e.appendChild(e4);
 		
+		Element e5 = doc.createElement("concurrentusers");
+		e5.setTextContent(concurrentusers+"");
+		e.appendChild(e5);
+				
+		Element e6 = doc.createElement("workspace");
+		e6.setTextContent(workspace	);
+		e.appendChild(e6);
 		
 		TransformerFactory ts = TransformerFactory.newInstance();
 		Transformer transformer = ts.newTransformer();
@@ -80,13 +85,16 @@ public class Properties implements Serializable
 		return threadcount;
 	}
 
+	public int getPort() {
+		return port;
+	}
+
+	public int getConcurrentusers() {
+		return concurrentusers;
+	}
+
 	public String getWorkspace() {
 		return workspace;
 	}
-
-	public int getDisplay() {
-		return display;
-	}
-	
 	
 }

@@ -28,5 +28,5 @@ public interface Model {
 	
 	public void exit();
 	
-	public void setProperties(String file) throws Exception;
+	public void setProperties(int threadcount, String newworkspace) throws Exception;
 }

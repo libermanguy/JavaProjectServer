@@ -23,7 +23,7 @@ import view.View;
 public class Demo {
 	public static void main(String[] args) {
 		
-		MyTCPIPServer server = new MyTCPIPServer(12345);
+		MyTCPIPServer server = new MyTCPIPServer();
 		MyView myview=new MyView();
 		MyModel mymodel=new MyModel();
 		Presenter presenter= new Presenter(mymodel, myview,server);
@@ -31,7 +31,13 @@ public class Demo {
 		mymodel.addObserver(presenter);
 		
 		server.setPresenter(presenter);
-		server.startServer(3);
+		try {
+			presenter.setProperties("C:\\temp\\prop.xml");
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		server.startServer();
 		//myview.startCLI();
 		
 	}

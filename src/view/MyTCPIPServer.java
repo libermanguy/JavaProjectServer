@@ -18,14 +18,16 @@ public class MyTCPIPServer {
 	private ServerSocket server;
 	private boolean killServer = true;
 	private Presenter presenter;
-	public MyTCPIPServer(int port){
-		this.port = port;
+	int numOfClients = 5;
+	public MyTCPIPServer(){
+		this.port = 12345;
 	}
 
-	public void startServer(int numOfClients){
+	public void startServer(){
 		executer = Executors.newFixedThreadPool(numOfClients);
 		try {
 			server=new ServerSocket(this.port);
+			System.out.println("Open Server With port" + port);
 			while(killServer){
 				System.out.println("Waiting for client");
 				Socket someClient = server.accept();
@@ -53,6 +55,14 @@ public class MyTCPIPServer {
 
 	public void setPresenter(Presenter p){
 		this.presenter=p;
+	}
+	
+	public void setNumOfClients(int num){
+		this.numOfClients=num;
+	}
+	
+	public void setPort(int newport){
+		this.port=newport;
 	}
 
 }

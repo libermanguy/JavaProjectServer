@@ -44,8 +44,6 @@ public class MyModel extends Observable implements Model {
 	/** The openthreads. */
 	int openthreads;
 	
-	Properties prop;
-	
 	ExecutorService executer;
 	
 	String workspace;
@@ -187,12 +185,9 @@ public class MyModel extends Observable implements Model {
 
 	
 	
-	public void setProperties(String file) throws Exception{
-		this.prop = new Properties();
-		prop.loadProp(file);
-		System.out.println(prop.getThreadcount());
-		executer = Executors.newFixedThreadPool(prop.getThreadcount());
-		workspace = prop.getWorkspace();
+	public void setProperties(int threadcount, String newworkspace) throws Exception{
+		executer = Executors.newFixedThreadPool(threadcount);
+		workspace = newworkspace;
 		try{
 			loadCache(workspace + "cache.zip");
 			}
