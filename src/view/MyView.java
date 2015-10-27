@@ -90,7 +90,11 @@ public MyView(){
 				public void run() {
 					
 					getInput();
+					
 					while(!line.equals("exit")){
+						String[] splited = line.split(" ");
+						line=splited[0];
+						System.out.println("Commands is "+ line);
 						if (line.equals("")){
 							out.write("");
 							getInput();
@@ -101,22 +105,21 @@ public MyView(){
 							
 						}
 						else if (line.toLowerCase().equals("start")){
-							String[] splited = line.split(" ");
 							setChanged();
 							notifyObservers(splited);
 							getInput();
 						}
 						
 						else if (line.toLowerCase().equals("stop")){
-							String[] splited = line.split(" ");
 							setChanged();
 							notifyObservers(splited);
 							getInput();
 						}
-						else if (line.toLowerCase().equals("load properties")){
-							String[] splited = line.split(" ");
+						else if (line.toLowerCase().equals("load")){
 							setChanged();
 							notifyObservers(splited);
+							getInput();
+
 						}
 						else{
 							out.write("Wrong command, write 'Help' or '?'");

@@ -30,13 +30,14 @@ public class Demo {
 		myview.addObserver(presenter);
 		mymodel.addObserver(presenter);
 		server.setPresenter(presenter);
-		try {
-			presenter.setProperties("C:\\temp\\prop_server.xml");
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		server.startServer();
+		myview.startCLI();
+//		try {
+//			//presenter.setProperties("C:\\temp\\prop_server.xml");
+//		} catch (Exception e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+		//server.startServer();
 	}
 
 }
