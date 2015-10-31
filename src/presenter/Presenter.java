@@ -45,8 +45,12 @@ public class Presenter implements Observer {
 			switch(strArr[0])
 			{
 				case "start": 
-					System.out.println("Inside the presenter");
+				try {
 					server.startServer();
+				} catch (Exception e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 				break;
 				
 				case "stop": 
@@ -57,7 +61,8 @@ public class Presenter implements Observer {
 					setProperties(strArr[1]);
 				} catch (Exception e) {
 					// TODO Auto-generated catch block
-					e.printStackTrace();
+					
+					view.displayStr("Please load valid XML file or server will fail");
 				}
 					//to complete
 				break;

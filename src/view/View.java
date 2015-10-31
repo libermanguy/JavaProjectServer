@@ -21,5 +21,6 @@ public interface View {
 	
 	public void setCLI();
 
+	public void displayStr(String arg);
 	
 }

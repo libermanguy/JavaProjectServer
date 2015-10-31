@@ -94,7 +94,6 @@ public MyView(){
 					while(!line.equals("exit")){
 						String[] splited = line.split(" ");
 						line=splited[0];
-						System.out.println("Commands is "+ line);
 						if (line.equals("")){
 							out.write("");
 							getInput();
@@ -128,11 +127,7 @@ public MyView(){
 						}
 					}	
 				
-					if (line.equals("exit")){
-						setChanged();
-						notifyObservers("exit");
-						
-					}
+
 				    }
 				  }).start();
 
@@ -159,11 +154,10 @@ public MyView(){
 		 * Prints the help.
 		 */
 		public void PrintHelp(){
-			out.write("Issue on of the following commands:\n");
+			out.write("\nIssue on of the following commands:\n");
 			out.write("load properties\n"
 					+ "start\n"
-					+ "stop\n"
-					+"exit\n"
+					+ "stop\n\n"
 					);
 			out.flush();
 		}
