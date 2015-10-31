@@ -3,12 +3,21 @@ import java.util.Comparator;
 
 import general.State;
 
-// TODO: Auto-generated Javadoc
+
+//TODO: Auto-generated Javadoc
 /**
- * The Class StateComperator.
- *
- * @param <T> the generic type
- */
+* 
+*  * <h1> The Class StateComperator.</h1>
+* Deciding how to compare states
+* 
+*  <p>
+* @param <T> the generic type
+* @author  Guy Liberman & Omri Polnikviat
+* @version 1.0
+* @since   2015-10-31
+*/
+
+
 public class StateComperator<T> implements Comparator<State<T>>
 {
 

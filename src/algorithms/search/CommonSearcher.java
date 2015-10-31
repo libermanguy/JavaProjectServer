@@ -5,12 +5,19 @@ import java.util.PriorityQueue;
 
 import general.State;
 
-// TODO: Auto-generated Javadoc
+//TODO: Auto-generated Javadoc
 /**
- * The Class CommonSearcher.
- *
- * @param <T> the generic type
- */
+* 
+*  * <h1> The Class CommonSearcher. </h1>
+* Represents the general searcher 
+* <p>
+* @param <T> the generic type
+*
+* @author  Guy Liberman & Omri Polnikviat
+* @version 1.0
+* @since   2015-10-31
+*/
+
 public abstract class CommonSearcher<T> implements Searcher<T>
 {
 	
@@ -69,7 +76,7 @@ public abstract class CommonSearcher<T> implements Searcher<T>
 	/**
 	 * Gets the state.
 	 *
-	 * @param curr the curr
+	 * @param curr the current state
 	 * @return the state
 	 */
 	public State<T> getState(State<T> curr) 

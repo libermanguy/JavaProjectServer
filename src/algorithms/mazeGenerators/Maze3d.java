@@ -6,14 +6,22 @@ import java.util.ArrayList;
 
 import general.Position;
 
-// TODO: Auto-generated Javadoc
+//TODO: Auto-generated Javadoc
 /**
- * The Class Maze3d.
- */
+* 
+*  * <h1> The Class Maze3d </h1>
+* The Maze 3D Class
+* <p>
+* 
+*
+* @author  Guy Liberman & Omri Polnikviat
+* @version 1.0
+* @since   2015-10-31
+*/
+
 public class Maze3d implements Serializable
 {
 	
-	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 1L;
 
 	/** The _maze3d. */
@@ -419,9 +427,6 @@ public class Maze3d implements Serializable
 		}
 	}
 	
-	/* (non-Javadoc)
-	 * @see java.lang.Object#hashCode()
-	 */
 	public int hashCode() 
 	{
 		int x=0;

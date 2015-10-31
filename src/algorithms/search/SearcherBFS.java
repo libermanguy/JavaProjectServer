@@ -7,12 +7,20 @@ import java.util.Iterator;
 import general.Solution;
 import general.State;
 
-// TODO: Auto-generated Javadoc
+//TODO: Auto-generated Javadoc
 /**
- * The Class SearcherBFS.
- *
- * @param <T> the generic type
- */
+* 
+*  * <h1> The Class SearcherBFS.</h1>
+* Represents the BFS Searcher
+* This searcher solving the problem with BFS algorithm
+* 
+*  <p>
+* @param <T> the generic type
+* @author  Guy Liberman & Omri Polnikviat
+* @version 1.0
+* @since   2015-10-31
+*/
+
 public class SearcherBFS<T> extends CommonSearcher<T>{
 
 	/* (non-Javadoc)

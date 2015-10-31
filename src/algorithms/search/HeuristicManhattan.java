@@ -3,10 +3,18 @@ package algorithms.search;
 import general.Position;
 import general.State;
 
-// TODO: Auto-generated Javadoc
+//TODO: Auto-generated Javadoc
 /**
- * The Class HeuristicManhattan.
- */
+* 
+*  * <h1> The Class HeuristicManhattan. </h1>
+* Represents the  Heuristic which calculates by Manhattan distance 
+* <p>
+*
+* @author  Guy Liberman & Omri Polnikviat
+* @version 1.0
+* @since   2015-10-31
+*/
+
 public class HeuristicManhattan implements Heuristic<Position> {
 
 	/* (non-Javadoc)

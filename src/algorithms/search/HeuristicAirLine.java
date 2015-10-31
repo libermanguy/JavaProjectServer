@@ -3,10 +3,19 @@ package algorithms.search;
 import general.Position;
 import general.State;
 
-// TODO: Auto-generated Javadoc
+//TODO: Auto-generated Javadoc
 /**
- * The Class HeuristicAirLine.
- */
+* 
+*  * <h1> The Class HeuristicAirLine. </h1>
+* Represents the  Heuristic which calculates by Air distance
+* <p>
+*
+* @author  Guy Liberman & Omri Polnikviat
+* @version 1.0
+* @since   2015-10-31
+*/
+
+
 public class HeuristicAirLine implements Heuristic<Position> {
 
 	/* (non-Javadoc)

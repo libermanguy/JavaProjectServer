@@ -7,12 +7,21 @@ import java.util.Iterator;
 import general.Solution;
 import general.State;
 
-// TODO: Auto-generated Javadoc
+//TODO: Auto-generated Javadoc
 /**
- * The Class SearcherAStar.
- *
- * @param <T> the generic type
- */
+* 
+*  * <h1> The Class SearcherAStar.</h1>
+* Represents the Astar Searcher
+* This searcher solving the problem with Astar algorithm
+* <p>
+* @param <T> the generic type
+*
+* @author  Guy Liberman & Omri Polnikviat
+* @version 1.0
+* @since   2015-10-31
+*/
+
+
 public class SearcherAStar<T> extends CommonSearcher<T> implements Searcher<T> {
 
 	/** The _heuristic. */

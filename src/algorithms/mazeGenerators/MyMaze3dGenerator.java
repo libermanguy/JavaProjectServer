@@ -7,14 +7,30 @@ import general.Position;
 import java.util.ArrayList;
 
 
-// TODO: Auto-generated Javadoc
+//TODO: Auto-generated Javadoc
 /**
- * The Class MyMaze3dGenerator.
- */
+* 
+*  * <h1> The Class MyMaze3dGenerator. </h1>
+* 
+* <p>
+* 
+*
+* @author  Guy Liberman & Omri Polnikviat
+* @version 1.0
+* @since   2015-10-31
+*/
+
+
 public class MyMaze3dGenerator extends MazeGenerator {
 
-	/* (non-Javadoc)
-	 * @see algorithms.mazeGenerators.MazeGenerator#generate(int, int, int)
+
+	/**
+	 * Generate the maze with recursive backtracer algorithm
+	 *
+	 * @param x the x
+	 * @param y the y
+	 * @param z the z
+	 * @return the maze3d
 	 */
 	@Override
 	public Maze3d generate(int x, int y, int z) 

@@ -2,12 +2,20 @@ package algorithms.search;
 
 import general.Solution;
 
-// TODO: Auto-generated Javadoc
+//TODO: Auto-generated Javadoc
 /**
- * The Interface Searcher.
- *
- * @param <T> the generic type
- */
+* 
+*  * <h1> The Interface Searcher.</h1>
+* Interface which defines the methods needed for searcher class 
+* <p>
+* @param <T> the generic type
+*
+* @author  Guy Liberman & Omri Polnikviat
+* @version 1.0
+* @since   2015-10-31
+*/
+
+
 public interface Searcher<T>
 {
     

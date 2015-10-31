@@ -3,10 +3,20 @@ package algorithms.mazeGenerators;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-// TODO: Auto-generated Javadoc
+//TODO: Auto-generated Javadoc
 /**
- * The Class MazeGenerator.
- */
+* 
+*  * <h1> The Class MazeGenerator. </h1>
+* 
+* <p>
+* 
+*
+* @author  Guy Liberman & Omri Polnikviat
+* @version 1.0
+* @since   2015-10-31
+*/
+
+
 public abstract class MazeGenerator implements Maze3dGenerator {
 
 	/* (non-Javadoc)

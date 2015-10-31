@@ -1,9 +1,18 @@
 package algorithms.mazeGenerators;
 
-// TODO: Auto-generated Javadoc
+//TODO: Auto-generated Javadoc
 /**
- * The Interface Maze3dGenerator.
- */
+* 
+*  * <h1> The Interface Maze3dGenerator. </h1>
+* 
+* <p>
+* 
+*
+* @author  Guy Liberman & Omri Polnikviat
+* @version 1.0
+* @since   2015-10-31
+*/
+
 public interface Maze3dGenerator 
 {
 	

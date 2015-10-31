@@ -3,13 +3,19 @@ package algorithms.search;
 import java.util.ArrayList;
 
 import general.State;
-
-// TODO: Auto-generated Javadoc
+//TODO: Auto-generated Javadoc
 /**
- * The Class CommonSearchable.
- *
- * @param <T> the generic type
- */
+* 
+*  * <h1> The Class CommonSearchable. </h1>
+* Represents the general searchable problem
+* <p>
+* 
+*
+* @author  Guy Liberman & Omri Polnikviat
+* @version 1.0
+* @since   2015-10-31
+*/
+
 public abstract class CommonSearchable<T> implements Searchable<T> {
 
 	/** The _start state. */

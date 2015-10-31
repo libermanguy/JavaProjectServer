@@ -4,12 +4,19 @@ import java.util.ArrayList;
 
 import general.State;
 
-// TODO: Auto-generated Javadoc
+//TODO: Auto-generated Javadoc
 /**
- * The Interface Searchable.
- *
- * @param <T> the generic type
- */
+* 
+*  * <h1> The Interface Searchable.</h1>
+* Interface which defines the methods needed for searchable class 
+* <p>
+* @param <T> the generic type
+*
+* @author  Guy Liberman & Omri Polnikviat
+* @version 1.0
+* @since   2015-10-31
+*/
+
 public interface Searchable<T> {
 	
 	/**
