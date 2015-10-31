@@ -5,8 +5,16 @@ import java.io.OutputStream;
 
 // TODO: Auto-generated Javadoc
 /**
- * The Class MyCompressorOutputStream.
- */
+* 
+*  * <h1>MyCompressorOutputStream</h1>
+* Stream that compress the maze 3D
+* <p>
+* 
+*
+* @author  Guy Liberman & Omri Polnikviat
+* @version 1.0
+* @since   2015-10-31
+*/
 public class MyCompressorOutputStream extends OutputStream {
 
 	/** The _out. */

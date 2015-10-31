@@ -12,19 +12,53 @@ import java.util.concurrent.Executors;
 
 import presenter.Presenter;
 
+// TODO: Auto-generated Javadoc
+/**
+* 
+*  * <h1>MyTCPIPServer</h1>
+* The Server that responsible for managing the new client connected to get a solution for thier mazes
+* <p>
+* 
+*
+* @author  Guy Liberman & Omri Polnikviat
+* @version 1.0
+* @since   2015-10-31
+*/
 public class MyTCPIPServer {
 
+	/** The Constant SOLVE. */
 	private static final String SOLVE = "solve";
+	
+	/** The port. */
 	private int port;
+	
+	/** The executer. */
 	private Executor executer;
+	
+	/** The server. */
 	private ServerSocket server;
+	
+	/** The kill server. */
 	private boolean killServer = true;
+	
+	/** The presenter. */
 	private Presenter presenter;
+	
+	/** The num of clients. */
 	int numOfClients = 5;
+	
+	/**
+	 * Instantiates a new my tcpip server.
+	 */
 	public MyTCPIPServer(){
 		this.port = 12345;
 	}
 
+	/**
+	 * Start server every 5 sec will restart the socket
+	 *when a new client connected an new client handler will be created to manage this client
+	 * @throws Exception the exception
+	 */
 	public void startServer() throws Exception{
 		killServer = true;
 		new Thread(new Runnable() {
@@ -78,18 +112,37 @@ public class MyTCPIPServer {
 			
 		
 	}
+	
+	/**
+	 * Stop server.
+	 */
 	public void stopServer(){
 		killServer = false;
 	}
 
+	/**
+	 * Sets the presenter.
+	 *
+	 * @param p the new presenter
+	 */
 	public void setPresenter(Presenter p){
 		this.presenter=p;
 	}
 	
+	/**
+	 * Sets the num of clients.
+	 *
+	 * @param num the new num of clients
+	 */
 	public void setNumOfClients(int num){
 		this.numOfClients=num;
 	}
 	
+	/**
+	 * Sets the port.
+	 *
+	 * @param newport the new port
+	 */
 	public void setPort(int newport){
 		this.port=newport;
 	}

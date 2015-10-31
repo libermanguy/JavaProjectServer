@@ -14,6 +14,18 @@ import view.MyModelClientHandler;
 import view.MyTCPIPServer;
 import view.View;
 
+// TODO: Auto-generated Javadoc
+/**
+* 
+*  * <h1>Presenter</h1>
+* Server side Presenter for the Maze Game
+* <p>
+* 
+*
+* @author  Guy Liberman & Omri Polnikviat
+* @version 1.0
+* @since   2015-10-31
+*/
 public class Presenter implements Observer {
 
 	/** The model. */
@@ -22,13 +34,23 @@ public class Presenter implements Observer {
 	/** The view. */
 	View view;
 	
+	/** The server. */
 	MyTCPIPServer server;
 	
+	/** The map. */
 	HashMap<Integer,MyModelClientHandler> map;
 	
+	/** The prop. */
 	Properties prop;
 	
 
+	/**
+	 * Instantiates a new presenter.
+	 *
+	 * @param model the model
+	 * @param view the view
+	 * @param server the server
+	 */
 	public Presenter(Model model, View view, MyTCPIPServer server) {
 		super();
 		this.model = model;
@@ -37,6 +59,9 @@ public class Presenter implements Observer {
 		map=new HashMap<Integer,MyModelClientHandler>();
 	}
 
+	/* (non-Javadoc)
+	 * @see java.util.Observer#update(java.util.Observable, java.lang.Object)
+	 */
 	@Override
 	public void update(Observable o, Object arg) {
 		
@@ -91,6 +116,12 @@ public class Presenter implements Observer {
 	
 	}
 
+	/**
+	 * Sets the properties.
+	 *
+	 * @param file the new properties
+	 * @throws Exception the exception
+	 */
 	public void setProperties(String file) throws Exception{
 		this.prop = new Properties();
 		prop.loadProp(file);

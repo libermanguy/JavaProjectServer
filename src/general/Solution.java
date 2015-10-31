@@ -5,10 +5,16 @@ import java.util.ArrayList;
 
 // TODO: Auto-generated Javadoc
 /**
- * The Class Solution.
- *
- * @param <T> the generic type
- */
+* 
+*  * <h1>Solution</h1>
+* Generic class for solution returned from the searcher
+* <p>
+* 
+*
+* @author  Guy Liberman & Omri Polnikviat
+* @version 1.0
+* @since   2015-10-31
+*/
 public class Solution<T> implements Serializable {
 
 	/**

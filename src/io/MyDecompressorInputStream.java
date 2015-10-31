@@ -5,8 +5,16 @@ import java.io.InputStream;
 
 // TODO: Auto-generated Javadoc
 /**
- * The Class MyDecompressorInputStream.
- */
+* 
+*  * <h1>MyDecompressorInputStream</h1>
+* Stream that decompress the maze 3D
+* <p>
+* 
+*
+* @author  Guy Liberman & Omri Polnikviat
+* @version 1.0
+* @since   2015-10-31
+*/
 public class MyDecompressorInputStream extends InputStream {
 
 	

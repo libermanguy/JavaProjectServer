@@ -16,11 +16,36 @@ import java.util.Observer;
 
 import algorithms.mazeGenerators.Maze3d;
 
+// TODO: Auto-generated Javadoc
+/**
+* 
+*  * <h1>MyModelClientHandler</h1>
+* Handles the new client thats connected to the server
+* <p>
+* 
+*
+* @author  Guy Liberman & Omri Polnikviat
+* @version 1.0
+* @since   2015-10-31
+*/
 public class MyModelClientHandler extends Observable implements Runnable {
 	
+	/** The some client. */
 	private Socket someClient;
+	
+	/** The out. */
 	private ObjectOutputStream out;
+	
+	/** The in. */
 	private ObjectInputStream in;
+	
+	/**
+	 * Instantiates a new my model client handler.
+	 *
+	 * @param someClient the new client that connected
+	 * @param out the out
+	 * @param in the in
+	 */
 	public MyModelClientHandler(Socket someClient, ObjectOutputStream out ,ObjectInputStream in ) {
 
 		this.someClient = someClient;
@@ -29,6 +54,9 @@ public class MyModelClientHandler extends Observable implements Runnable {
 
 	}
 
+	/* (non-Javadoc)
+	 * @see java.lang.Runnable#run()
+	 */
 	@Override
 	public void run() {
 		try {
@@ -42,9 +70,10 @@ public class MyModelClientHandler extends Observable implements Runnable {
 	}
 
 	/**
-	 * This method Sends notification on the image conversion ends
-	 * @param bos
-	 * @throws IOException
+	 * This method Sends the solution to the client when its ready.
+	 *
+	 * @param o the o
+	 * @throws IOException Signals that an I/O exception has occurred.
 	 */
 	public void sendClientSolution(Object o) throws IOException {
 		out.writeObject(o);
@@ -56,20 +85,9 @@ public class MyModelClientHandler extends Observable implements Runnable {
 
 	}
 
-	/**
-	 * This methods reads image from client output stream
-	 * @return
-	 * @throws IOException
+	/* (non-Javadoc)
+	 * @see java.lang.Object#hashCode()
 	 */
-	private InputStream readInputClient() throws IOException {
-		DataInputStream dis = new DataInputStream(someClient.getInputStream());
-		int len = dis.readInt();
-		byte[] data = new byte[len];
-		dis.readFully(data);
-		InputStream ian = new ByteArrayInputStream(data);
-		return ian;
-	}
-
 	@Override
 	public int hashCode(){
 		return someClient.toString().hashCode();

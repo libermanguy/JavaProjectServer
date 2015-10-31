@@ -4,10 +4,16 @@ import java.io.Serializable;
 
 // TODO: Auto-generated Javadoc
 /**
- * The Class State.
- *
- * @param <T> the generic type
- */
+* 
+*  * <h1>State</h1>
+* A class that represents a specific state with a specific cost
+* <p>
+* 
+*
+* @author  Guy Liberman & Omri Polnikviat
+* @version 1.0
+* @since   2015-10-31
+*/
 public class State<T> implements Comparable<State<T>>,Serializable{
     
     /**

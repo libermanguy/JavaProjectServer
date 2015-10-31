@@ -30,12 +30,22 @@ import general.Properties;
 import general.Solution;
 import io.*;
 
+// TODO: Auto-generated Javadoc
 /**
- * The Class MyModel.
- */
+* 
+*  * <h1>MyModel</h1>
+* Server side model for the Maze Game
+* <p>
+* 
+*
+* @author  Guy Liberman & Omri Polnikviat
+* @version 1.0
+* @since   2015-10-31
+*/
 public class MyModel extends Observable implements Model {
 
 
+	/** The _solutionscache. */
 	HashMap<Maze3d,Solution<Position>> _solutionscache;
 	
 	/** The openfiles. */
@@ -44,8 +54,10 @@ public class MyModel extends Observable implements Model {
 	/** The openthreads. */
 	int openthreads;
 	
+	/** The executer. */
 	ExecutorService executer;
 	
+	/** The workspace. */
 	String workspace;
 	
 	/**
@@ -63,6 +75,12 @@ public class MyModel extends Observable implements Model {
 	
 
 
+	/**
+	 * Save cache.
+	 *
+	 * @param file the cache file
+	 * @throws Exception the exception
+	 */
 	public void saveCache(String file) throws Exception
 	{
 		OutputStream fileOut=new FileOutputStream(file);
@@ -80,6 +98,12 @@ public class MyModel extends Observable implements Model {
 
 
 
+	/**
+	 * Load cache.
+	 *
+	 * @param file the cache file
+	 * @throws Exception the exception
+	 */
 	@SuppressWarnings("unchecked")
 	
 	public void loadCache(String file) throws Exception
@@ -185,6 +209,9 @@ public class MyModel extends Observable implements Model {
 
 	
 	
+	/* (non-Javadoc)
+	 * @see model.Model#setProperties(int, java.lang.String)
+	 */
 	public void setProperties(int threadcount, String newworkspace) throws Exception{
 		executer = Executors.newFixedThreadPool(threadcount);
 		workspace = newworkspace;

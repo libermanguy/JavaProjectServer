@@ -13,9 +13,7 @@ import general.Position;
 public class Maze3d implements Serializable
 {
 	
-	/**
-	 * 
-	 */
+	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 1L;
 
 	/** The _maze3d. */
@@ -421,6 +419,9 @@ public class Maze3d implements Serializable
 		}
 	}
 	
+	/* (non-Javadoc)
+	 * @see java.lang.Object#hashCode()
+	 */
 	public int hashCode() 
 	{
 		int x=0;

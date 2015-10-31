@@ -1,3 +1,6 @@
+/*
+ * 
+ */
 package general;
 
 import java.io.File;
@@ -19,14 +22,37 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
+// TODO: Auto-generated Javadoc
+/**
+* 
+*  * <h1>Properties</h1>
+* The Server Properties file
+* <p>
+* 
+*
+* @author  Guy Liberman & Omri Polnikviat
+* @version 1.0
+* @since   2015-10-31
+*/
 @SuppressWarnings("serial")
 public class Properties implements Serializable 
 {
+	
+	/** The threadcount. */
 	int threadcount;
+	
+	/** The port. */
 	int port;
+	
+	/** The concurrentusers. */
 	int concurrentusers; 
+	
+	/** The workspace. */
 	String workspace;
 	
+	/**
+	 * Instantiates a new properties.
+	 */
 	public Properties() {
 		threadcount = 5;
 		port=2000;
@@ -34,6 +60,12 @@ public class Properties implements Serializable
 		workspace="default";
 	}
 	
+	/**
+	 * Load prop.
+	 *
+	 * @param file the properties file
+	 * @throws Exception the exception
+	 */
 	public void loadProp(String file) throws Exception
 	{
 		File inputfile = new File(file);
@@ -50,6 +82,12 @@ public class Properties implements Serializable
 		workspace =  e.getElementsByTagName("workspace").item(0).getTextContent();
 	}
 	
+	/**
+	 * Save prop.
+	 *
+	 * @param file the properties file
+	 * @throws Exception the exception
+	 */
 	public void saveProp(String file) throws Exception
 	{
 		File outputfile = new File(file);
@@ -81,18 +119,38 @@ public class Properties implements Serializable
 		transformer.transform(dm, new StreamResult(outputfile));
 		}
 
+	/**
+	 * Gets the thread count from the properties file.
+	 *
+	 * @return the threadcount
+	 */
 	public int getThreadcount() {
 		return threadcount;
 	}
 
+	/**
+	 * Gets the port.
+	 *
+	 * @return the port
+	 */
 	public int getPort() {
 		return port;
 	}
 
+	/**
+	 * Gets the allowed number of clients.
+	 *
+	 * @return the concurrentusers
+	 */
 	public int getConcurrentusers() {
 		return concurrentusers;
 	}
 
+	/**
+	 * Gets the workspace.
+	 *
+	 * @return the workspace
+	 */
 	public String getWorkspace() {
 		return workspace;
 	}

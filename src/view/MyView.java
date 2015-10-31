@@ -15,15 +15,27 @@ import general.Position;
 import general.Solution;
 import general.State;
 
+// TODO: Auto-generated Javadoc
 /**
- * The Class MyView.
- */
+* 
+*  * <h1>MyView</h1>
+* View Layer that manages the input from the client and forward the commands to the model 
+* <p>
+* 
+*
+* @author  Guy Liberman & Omri Polnikviat
+* @version 1.0
+* @since   2015-10-31
+*/
 public class MyView extends Observable implements View
 {
 	
 	/** The cli. */
 	CLI cli;
 	
+/**
+ * Instantiates a new my view.
+ */
 public MyView(){
 	setCLI();
 }
@@ -44,11 +56,17 @@ public MyView(){
 	}
 	
 
+	/**
+	 * Start cli.
+	 */
 	public void startCLI(){
 		cli.start();
 	}
 	
 	
+	/* (non-Javadoc)
+	 * @see view.View#setCLI()
+	 */
 	public void setCLI() {
 		cli=new CLI(new BufferedReader(new InputStreamReader(System.in)), 
 				new PrintWriter(new OutputStreamWriter(System.out)));
@@ -56,6 +74,9 @@ public MyView(){
 	}
 	
 	
+	/**
+	 * The Class CLI.
+	 */
 	public class CLI extends Thread{
 		
 		/** The input . */
@@ -73,7 +94,6 @@ public MyView(){
 		 *
 		 * @param input the input
 		 * @param output the output
-		 * @param commandsHM the commands hm
 		 */
 		public CLI(BufferedReader input,PrintWriter output){
 			in=input;
